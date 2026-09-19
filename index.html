@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s1</title>
+<style>
+:root{
+  --red:#ff0000;
+  --yellow:#ffe600;
+  --black:#000;
+}
+*{box-sizing:border-box}
+html{background:var(--black);scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--black);
+  color:var(--red);
+  font-family:"Courier New",Courier,monospace;
+}
+.page{
+  width:min(1120px,90vw);
+  margin:0 auto;
+  padding:8vh 0 20vh;
+}
+.main{
+  display:grid;
+  grid-template-columns:minmax(280px,520px) minmax(300px,1fr);
+  gap:7vw;
+  align-items:start;
+}
+.cover{
+  width:100%;
+  aspect-ratio:1/1;
+  overflow:hidden;
+}
+.cover img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+.tracks{
+  padding-top:4vh;
+}
+.track{
+  margin:0 0 34px;
+}
+.track-line{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-width:0;
+}
+.play{
+  appearance:none;
+  border:1px solid var(--red);
+  background:transparent;
+  color:var(--red);
+  width:42px;
+  height:34px;
+  padding:0;
+  flex:0 0 42px;
+  font:inherit;
+  font-size:17px;
+  line-height:1;
+  cursor:pointer;
+}
+.play:hover,
+.play:focus-visible{
+  background:var(--red);
+  color:var(--black);
+  outline:none;
+}
+.name{
+  font-size:15px;
+  line-height:1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.timeline{
+  margin-top:11px;
+  padding-left:58px;
+  color:#551010;
+  font-size:13px;
+  line-height:1;
+  letter-spacing:0;
+  user-select:none;
+  cursor:pointer;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.timeline .played{color:var(--red)}
+.timeline .remaining{color:#3a0b0b}
+.track.active .timeline .remaining{color:#260707}
+.time{
+  padding-left:58px;
+  margin-top:7px;
+  font-size:10px;
+  color:#551010;
+}
+.track.active .time{color:var(--red)}
+.spacer{
+  height:58vh;
+  min-height:380px;
+}
+.easter{
+  color:var(--yellow);
+  text-align:center;
+  overflow:auto;
+}
+.easter pre{
+  display:inline-block;
+  margin:0;
+  font:14px/1 "Courier New",Courier,monospace;
+  text-align:left;
+}
+@media(max-width:760px){
+  .page{width:calc(100vw - 36px);padding-top:24px}
+  .main{display:block}
+  .cover{margin-bottom:38px}
+  .tracks{padding-top:0}
+  .track{margin-bottom:28px}
+  .spacer{height:42vh;min-height:240px}
+  .easter pre{font-size:11px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <main class="main">
+    <section class="cover">
+      <img src="cover.png" alt="">
+    </section>
+
+    <section class="tracks" aria-label="tracks">
+      <div class="track" data-file="01.mp3" data-name="s1_01">
+        <div class="track-line">
+          <button class="play" type="button" aria-label="Play s1_01">▶</button>
+          <span class="name">s1_01</span>
+        </div>
+        <div class="timeline" role="slider" tabindex="0" aria-label="Timeline for s1_01"><span class="played"></span><span class="remaining"></span></div>
+        <div class="time"><span class="current">00:00</span> / <span class="duration">00:00</span></div>
+      </div>
+
+      <div class="track" data-file="02.mp3" data-name="s1_02">
+        <div class="track-line">
+          <button class="play" type="button" aria-label="Play s1_02">▶</button>
+          <span class="name">s1_02</span>
+        </div>
+        <div class="timeline" role="slider" tabindex="0" aria-label="Timeline for s1_02"><span class="played"></span><span class="remaining"></span></div>
+        <div class="time"><span class="current">00:00</span> / <span class="duration">00:00</span></div>
+      </div>
+
+      <div class="track" data-file="03.mp3" data-name="s1_03">
+        <div class="track-line">
+          <button class="play" type="button" aria-label="Play s1_03">▶</button>
+          <span class="name">s1_03</span>
+        </div>
+        <div class="timeline" role="slider" tabindex="0" aria-label="Timeline for s1_03"><span class="played"></span><span class="remaining"></span></div>
+        <div class="time"><span class="current">00:00</span> / <span class="duration">00:00</span></div>
+      </div>
+
+      <div class="track" data-file="04.mp3" data-name="s1_04">
+        <div class="track-line">
+          <button class="play" type="button" aria-label="Play s1_04">▶</button>
+          <span class="name">s1_04</span>
+        </div>
+        <div class="timeline" role="slider" tabindex="0" aria-label="Timeline for s1_04"><span class="played"></span><span class="remaining"></span></div>
+        <div class="time"><span class="current">00:00</span> / <span class="duration">00:00</span></div>
+      </div>
+
+      <div class="track" data-file="05.mp3" data-name="s1_05">
+        <div class="track-line">
+          <button class="play" type="button" aria-label="Play s1_05">▶</button>
+          <span class="name">s1_05</span>
+        </div>
+        <div class="timeline" role="slider" tabindex="0" aria-label="Timeline for s1_05"><span class="played"></span><span class="remaining"></span></div>
+        <div class="time"><span class="current">00:00</span> / <span class="duration">00:00</span></div>
+      </div>
+
+      <div class="track" data-file="06.mp3" data-name="s1_06">
+        <div class="track-line">
+          <button class="play" type="button" aria-label="Play s1_06">▶</button>
+          <span class="name">s1_06</span>
+        </div>
+        <div class="timeline" role="slider" tabindex="0" aria-label="Timeline for s1_06"><span class="played"></span><span class="remaining"></span></div>
+        <div class="time"><span class="current">00:00</span> / <span class="duration">00:00</span></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="spacer"></div>
+
+  <footer class="easter" aria-label="Easter egg">
+<pre>
+[===|-----------&gt;&gt;  SMMIKMS
+</pre>
+  </footer>
+</div>
+
+<audio id="audio" preload="metadata"></audio>
+
+<script>
+(() => {
+  const audio = document.getElementById("audio");
+  const tracks = [...document.querySelectorAll(".track")];
+  let active = null;
+  const CHARS = 48;
+
+  const fmt = seconds => {
+    if (!Number.isFinite(seconds)) return "00:00";
+    const s = Math.max(0, Math.floor(seconds));
+    return String(Math.floor(s / 60)).padStart(2,"0") + ":" + String(s % 60).padStart(2,"0");
+  };
+
+  function draw(track, ratio) {
+    ratio = Math.max(0, Math.min(1, Number(ratio) || 0));
+    const n = Math.round(CHARS * ratio);
+    track.querySelector(".played").textContent = "-".repeat(n);
+    track.querySelector(".remaining").textContent = "-".repeat(CHARS - n);
+  }
+
+  function resetTrack(track) {
+    track.classList.remove("active");
+    track.querySelector(".play").textContent = "▶";
+    track.querySelector(".current").textContent = "00:00";
+    draw(track, 0);
+  }
+
+  function stopOthers(except) {
+    tracks.forEach(t => {
+      if (t !== except) resetTrack(t);
+    });
+  }
+
+  function loadTrack(track) {
+    if (active === track) {
+      audio.pause();
+      audio.currentTime = 0;
+      resetTrack(track);
+      active = null;
+      return;
+    }
+
+    audio.pause();
+    audio.currentTime = 0;
+    stopOthers(track);
+
+    active = track;
+    track.classList.add("active");
+    track.querySelector(".play").textContent = "■";
+    audio.src = track.dataset.file;
+    audio.load();
+    audio.currentTime = 0;
+    audio.play().catch(() => {
+      resetTrack(track);
+      active = null;
+    });
+  }
+
+  tracks.forEach(track => {
+    track.querySelector(".play").addEventListener("click", () => loadTrack(track));
+
+    const timeline = track.querySelector(".timeline");
+    timeline.addEventListener("click", e => {
+      if (active !== track || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
+      const rect = timeline.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      audio.currentTime = ratio * audio.duration;
+    });
+
+    timeline.addEventListener("keydown", e => {
+      if (active !== track || !Number.isFinite(audio.duration)) return;
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      e.preventDefault();
+      const step = 5;
+      audio.currentTime = Math.max(0, Math.min(audio.duration,
+        audio.currentTime + (e.key === "ArrowRight" ? step : -step)));
+    });
+  });
+
+  audio.addEventListener("loadedmetadata", () => {
+    if (!active) return;
+    active.querySelector(".duration").textContent = fmt(audio.duration);
+    active.querySelector(".current").textContent = "00:00";
+    draw(active, 0);
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    if (!active || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
+    const ratio = audio.currentTime / audio.duration;
+    active.querySelector(".current").textContent = fmt(audio.currentTime);
+    draw(active, ratio);
+  });
+
+  audio.addEventListener("ended", () => {
+    if (!active) return;
+    const i = tracks.indexOf(active);
+    const next = tracks[i + 1];
+    resetTrack(active);
+    active = null;
+    if (next) loadTrack(next);
+  });
+})();
+</script>
+</body>
+</html>
